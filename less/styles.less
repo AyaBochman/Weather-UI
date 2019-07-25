@@ -7,38 +7,50 @@
 
 body{
     background: @background-color;
-    // background-image: @bg-gradient;
     overflow-x: hidden;
     font-family: @main-font;
     color: @dark-blue;
-    
-    // background-size:     cover;                      /* <------ */
-    // background-repeat:   no-repeat;
-    // background-position: center center; 
-    // height: 100vh;
-    // background: @background-img;
-    
 }
 
 .main{
     text-align: @header-align;
 }
 
+.clouds-animated {
+    background:  @background-color url('../img/clouds2.png') repeat 0 0;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    animation: slide 20s linear infinite;
+    -webkit-animation: slide 20s linear infinite;
+  }
+  
+  
+  @keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: -400px 0; }
+}
+  @-webkit-keyframes slide {
+      from { background-position: 0 0; }
+      to { background-position: -400px 0; }
+  }
+
+
 .nav{
-    // vertical-align: top;
+  
     background: @transparent-color;
     height: 190px;
     display: inline-block;
     width: 100%;
     text-align: @header-align;
 
-    @media @phone-down {  height:100px; }
-    @media @small-phone-down {  height:100px;}
+    @media @phone-down {  height:180px; }
+    @media @small-phone-down {  height:180px;}
 
 }
 
 .header{
-    margin-top:45px;
+    margin-top:15px;
     font-family: @main-font;
     color: @dark-blue;
     height: auto;
@@ -48,27 +60,16 @@ body{
     @media @phone-down {  width:300px;  margin-top:20px; }
     @media @small-phone-down {   width:300px;  margin-top:20px; }
 
-}
 
-#cloud{
-    animation-duration: 2s;
-    // animation-delay: 2s;
-    // animation-iteration-count: infinite;
 }
-
-// h2{
-//     font-size: @header-size;
-// }
 
 .search-div{
-    margin-top: 20px;
-//   width: 400px;
-  display: inline-block;
+  display: block;
   @media @phone-down {  margin:20px; }
 }
 
 
-  input{
+input{
 
 border-radius: 50px;
 display: inline-block;
@@ -89,10 +90,6 @@ transition: 0.3s background-color ease-in-out, 0.3s;
     opacity: 1;
     
   }
-//     &:hover{
-//     //   background: red;
-//     opacity: 1;
-//   }
 
   @media @wide-screen-down { width: 400px; }
   @media @desktop-down{  width: 400px;}
@@ -100,7 +97,6 @@ transition: 0.3s background-color ease-in-out, 0.3s;
   @media @phone-down {  width:260px; }
   @media @small-phone-down {  width: 220px; font-size: 20px;}
   }
-//   input
 
 
 input::placeholder{
@@ -118,7 +114,7 @@ input::placeholder{
         position: relative;
         cursor: pointer;
         font-size: 50px;
-        // padding: 10px;
+     
         left: 10px;
         top: 14px;
         transition: all .2s ease-in-out;
@@ -131,55 +127,135 @@ input::placeholder{
     }
 
 
-    //display
+    //weather displaya
 
-.display{
+.display-top{
+  
+    padding: 20px;
+    animation-duration: 1.2s;
+}
+
+.display-bottom{
+ 
+    display: inline-block;
+    @media @phone-down { margin-top: -10px;}
+    @media @small-phone-down { margin-top: -10px;}
+}
+
+
+//card
+.main-card{
+    height: 180px;
+    display: inline-block;
+    width: 80%;
+    background: rgba(255,255,255,0.8);
+    border-radius: 20px;
+    @media @desktop-down{  width: 100%;}
+    @media @phone-down { width: 100%; }
+    @media @small-phone-down {width: 100%;}
+ 
+}
+.city{
+    display: inline-block;
     margin-top: 50px;
-}
-
-
-//bg
-.clouds-animated {
-    background:  @background-color url('../img/clouds.png') repeat 0 0;
     width: 100%;
-    margin: 0;
-    text-align: center;
-    // height: 300px;
-    // padding-top: 120px;
-    // box-sizing: border-box;
-    animation: slide 20s linear infinite;
-    -webkit-animation: slide 20s linear infinite;
-  }
-  
-  
-  @keyframes slide {
-    from { background-position: 0 0; }
-    to { background-position: -400px 0; }
-}
-  @-webkit-keyframes slide {
-      from { background-position: 0 0; }
-      to { background-position: -400px 0; }
-  }
-
-
-  //card
-.border-c{
-    border: 2px solid @logo-blue;
+    margin-left: -70px;
+    @media @desktop-down{ margin-left: -15px;}
+    @media @phone-down {  margin-top: 20px;  margin-left: -15px;width:260px; }
+    @media @small-phone-down { margin-top: 20px;  margin-left: -15px;width:260px;}
+    
 }
 
+.fa-city{
+    display: inline-block;
+}
 
-//my card
-.my-card{
-    height: 240px;
+.city-name{
+ display: inline-block;   
+ font-size: 45px; 
+ @media @phone-down { font-size: 2em; }
+ @media @small-phone-down {  width: 220px; font-size: 20px;}
+
+}
+.now{
+    display: inline-block;
+    @media @phone-down {  margin-top: -50px; margin-left: -60px; display: inline-block; }
+    @media @small-phone-down { margin-top: -50px; margin-left: -60px; display: inline-block;}
+}
+
+.now-celcius{
+    margin-top: 32px;  
+   
+    font-size: 62px;
+    @media @phone-down {display: inline-block; }
+    @media @small-phone-down {display: inline-block;}
+}
+.daily-celcius{
+    display: block;
+    font-size: 20px;
+    margin-top: -25px;  
+
+    @media @phone-down {display: inline-block;  margin-left: -15px;   }
+    @media @small-phone-down {display: inline-block; margin-left: -15px;   }
+}
+
+.main-card .celcius{
+    font-size: 20px;
+    font-weight: normal;  
+   
+}
+
+.main-sunny{
+    width: 100px;
+    height: auto;
+    transition: all 1s ease-in-out;
+
+    @media @phone-down {  width: 50px;}
+    @media @small-phone-down { width: 50px; }
+
+    &:hover{
+        -ms-transform: rotate(360deg); /* IE 9 */
+        -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+        transform: rotate(360deg);
+    }
+}
+
+
+.main-condition{
+    margin-top: 28px;
+    @media @phone-down { position: absolute; top:-140px; right: 40px; }
+    @media @small-phone-down { position: absolute; top:-140px; right: 40px;}
+}
+
+//second cards
+.secondary-card{
+    // height: 200px;
+ 
     width: 230px;
     background: #ffffff;
     border-radius: 20px;
-    border: 2px solid @logo-blue;
+    transition: all .1s ease-in-out;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  
+
+    &:hover{
+        transform: scale(1.05);
+    }
+
+    @media @phone-down { margin-top: 10px; }
+    @media @small-phone-down {margin-top:10px; }
 }
 
 .card-header{
     color: @dark-blue;
     font-size: 20px;
+    width: 100%;
 }
 
 .weather-cond{
@@ -187,9 +263,21 @@ input::placeholder{
     font-weight: bold;
 }
 
+.sunny{
+    width: 50px;
+    height: auto;
+}
+
+.card-weather{
+    margin-top: 10px;
+}
+
 .celcius{
     font-size: 32px;
     font-weight: bold;
+    margin-top: -10px;
 }
+
+
 
 
