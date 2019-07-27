@@ -4429,7 +4429,7 @@ body {
   text-align: center;
 }
 .clouds-animated {
-  background: #00C8CC url('../img/clouds2.png') repeat 0 0;
+  background: #00C8CC url('../img/cloudss.png') repeat 0 0;
   width: 100%;
   margin: 0;
   text-align: center;
@@ -4650,30 +4650,26 @@ input::placeholder {
 }
 @media (max-width: 480px) {
   .now {
+    position: absolute;
     margin-top: -50px;
-    margin-left: -60px;
-    display: inline-block;
+    left: 35px;
   }
 }
 @media (max-width: 320px) {
   .now {
-    margin-top: -50px;
-    margin-left: -60px;
-    display: inline-block;
+    position: absolute;
+    margin-top: -40px;
+    left: 35px;
   }
 }
 .now-celcius {
   margin-top: 32px;
+  display: inline-block;
   font-size: 62px;
-}
-@media (max-width: 480px) {
-  .now-celcius {
-    display: inline-block;
-  }
 }
 @media (max-width: 320px) {
   .now-celcius {
-    display: inline-block;
+    font-size: 40px;
   }
 }
 .daily-celcius {
@@ -4684,40 +4680,43 @@ input::placeholder {
 @media (max-width: 480px) {
   .daily-celcius {
     display: inline-block;
-    margin-left: -15px;
+    margin-left: -5px;
   }
 }
 @media (max-width: 320px) {
   .daily-celcius {
     display: inline-block;
-    margin-left: -15px;
+    margin-left: -5px;
   }
 }
 .main-card .celcius {
   font-size: 20px;
   font-weight: normal;
 }
-.main-sunny {
+.main-weather {
   width: 100px;
   height: auto;
   transition: all 1s ease-in-out;
 }
 @media (max-width: 480px) {
-  .main-sunny {
-    width: 50px;
+  .main-weather {
+    width: 75px;
   }
 }
 @media (max-width: 320px) {
-  .main-sunny {
-    width: 50px;
+  .main-weather {
+    width: 60px;
   }
 }
-.main-sunny:hover {
+.main-weather:hover {
   -ms-transform: rotate(360deg);
   /* IE 9 */
   -webkit-transform: rotate(360deg);
   /* Chrome, Safari, Opera */
   transform: rotate(360deg);
+}
+.weather-cond {
+  font-weight: bold;
 }
 .main-condition {
   margin-top: 28px;
@@ -4725,22 +4724,22 @@ input::placeholder {
 @media (max-width: 480px) {
   .main-condition {
     position: absolute;
-    top: -140px;
-    right: 40px;
+    top: -75px;
+    right: 46px;
   }
 }
 @media (max-width: 320px) {
   .main-condition {
     position: absolute;
-    top: -140px;
+    top: -75px;
     right: 40px;
   }
 }
 .secondary-card {
   width: 230px;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.15s ease-in-out;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4750,6 +4749,7 @@ input::placeholder {
 }
 .secondary-card:hover {
   transform: scale(1.05);
+  background: #ffffff;
 }
 @media (max-width: 480px) {
   .secondary-card {
@@ -4766,13 +4766,21 @@ input::placeholder {
   font-size: 20px;
   width: 100%;
 }
-.weather-cond {
+.weather-sunny {
   color: #FFC106;
-  font-weight: bold;
 }
-.sunny {
+.weather-icon {
   width: 50px;
   height: auto;
+}
+.sunny {
+  color: #FFC106;
+}
+.rain {
+  color: #6f6f6f;
+}
+.cloudy {
+  color: #00a5d7;
 }
 .card-weather {
   margin-top: 10px;
@@ -4781,4 +4789,14 @@ input::placeholder {
   font-size: 32px;
   font-weight: bold;
   margin-top: -10px;
+}
+.fa-chevron-circle-right {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  margin: 10px;
+}
+.fa-chevron-circle-right:hover {
+  color: rgba(255, 255, 255, 0.4);
 }

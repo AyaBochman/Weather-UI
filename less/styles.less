@@ -17,7 +17,7 @@ body{
 }
 
 .clouds-animated {
-    background:  @background-color url('../img/clouds2.png') repeat 0 0;
+    background:  @background-color url('../img/cloudss.png') repeat 0 0;
     width: 100%;
     margin: 0;
     text-align: center;
@@ -149,6 +149,7 @@ input::placeholder{
     display: inline-block;
     width: 80%;
     background: rgba(255,255,255,0.8);
+    // background: white;
     border-radius: 20px;
     @media @desktop-down{  width: 100%;}
     @media @phone-down { width: 100%; }
@@ -179,24 +180,24 @@ input::placeholder{
 }
 .now{
     display: inline-block;
-    @media @phone-down {  margin-top: -50px; margin-left: -60px; display: inline-block; }
-    @media @small-phone-down { margin-top: -50px; margin-left: -60px; display: inline-block;}
+    @media @phone-down {  position: absolute; margin-top: -50px; left:35px; }
+    @media @small-phone-down {  position: absolute;margin-top: -40px; left:35px;}
 }
 
 .now-celcius{
     margin-top: 32px;  
-   
+    display: inline-block;
     font-size: 62px;
-    @media @phone-down {display: inline-block; }
-    @media @small-phone-down {display: inline-block;}
+    @media @phone-down {}
+    @media @small-phone-down { font-size: 40px;}
 }
 .daily-celcius{
     display: block;
     font-size: 20px;
     margin-top: -25px;  
 
-    @media @phone-down {display: inline-block;  margin-left: -15px;   }
-    @media @small-phone-down {display: inline-block; margin-left: -15px;   }
+    @media @phone-down { display: inline-block; margin-left: -5px;   }
+    @media @small-phone-down {display: inline-block; margin-left: -5px;   }
 }
 
 .main-card .celcius{
@@ -205,26 +206,31 @@ input::placeholder{
    
 }
 
-.main-sunny{
+.main-weather{
     width: 100px;
     height: auto;
     transition: all 1s ease-in-out;
 
-    @media @phone-down {  width: 50px;}
-    @media @small-phone-down { width: 50px; }
+    @media @phone-down {  width: 75px; }
+    @media @small-phone-down { width: 60px;}
 
     &:hover{
         -ms-transform: rotate(360deg); /* IE 9 */
         -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
         transform: rotate(360deg);
     }
-}
 
+   
+}
+.weather-cond{
+  
+    font-weight: bold;
+}
 
 .main-condition{
     margin-top: 28px;
-    @media @phone-down { position: absolute; top:-140px; right: 40px; }
-    @media @small-phone-down { position: absolute; top:-140px; right: 40px;}
+    @media @phone-down { position: absolute; top:-75px; right: 46px; }
+    @media @small-phone-down { position: absolute; top:-75px; right: 40px;}
 }
 
 //second cards
@@ -232,9 +238,9 @@ input::placeholder{
     // height: 200px;
  
     width: 230px;
-    background: #ffffff;
+    background: rgba(255,255,255,0.9);
     border-radius: 20px;
-    transition: all .1s ease-in-out;
+    transition: all .15s ease-in-out;
 
     display: -webkit-box;
     display: -webkit-flex;
@@ -246,6 +252,7 @@ input::placeholder{
 
     &:hover{
         transform: scale(1.05);
+        background: #ffffff;
     }
 
     @media @phone-down { margin-top: 10px; }
@@ -258,15 +265,28 @@ input::placeholder{
     width: 100%;
 }
 
-.weather-cond{
+.weather-sunny{
     color: #FFC106;
-    font-weight: bold;
+    // font-weight: bold;
 }
 
-.sunny{
+.weather-icon{
     width: 50px;
     height: auto;
 }
+
+.sunny{
+    color: #FFC106;
+}
+
+.rain{
+    color: #6f6f6f;
+}
+
+.cloudy{
+    color: #00a5d7;
+}
+
 
 .card-weather{
     margin-top: 10px;
@@ -279,5 +299,17 @@ input::placeholder{
 }
 
 
+//next
+.fa-chevron-circle-right{
+    color: rgba(255,255,255,0.9);
+    font-size: 30px;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+    margin: 10px;
+
+    &:hover{
+        color:  rgba(255,255,255,0.4);
+    }
+}
 
 
