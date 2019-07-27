@@ -21,18 +21,20 @@ body{
     width: 100%;
     margin: 0;
     text-align: center;
+    
     animation: slide 20s linear infinite;
+    -moz-animation: slide 20s linear infinite;
     -webkit-animation: slide 20s linear infinite;
   }
   
   
   @keyframes slide {
-    from { background-position: 0 0; }
-    to { background-position: -400px 0; }
+    0% { background-position: 0 0; }
+    100% { background-position: -800px 0; }
 }
   @-webkit-keyframes slide {
-      from { background-position: 0 0; }
-      to { background-position: -400px 0; }
+    0%{ background-position: 0 0; }
+    100% { background-position: -800px 0; }
   }
 
 
@@ -54,9 +56,7 @@ body{
     font-family: @main-font;
     color: @dark-blue;
     height: auto;
-    // @media @wide-screen-down { width: 400px; }
-    // @media @desktop-down{  width: 400px;}
-    // @media @tablet-down {  width:400px;}
+  
     @media @phone-down {  width:300px;  margin-top:20px; }
     @media @small-phone-down {   width:300px;  margin-top:20px; }
 
@@ -74,7 +74,6 @@ input{
 border-radius: 50px;
 display: inline-block;
 color: @dark-blue;
-// font-weight: bold;
 font-family: @input-font;
 font-size: 24px;
 height: 46px;
@@ -120,6 +119,8 @@ input::placeholder{
         transition: all .2s ease-in-out;
 
         &:hover{
+            -webkit-transform:scale(1.2);
+            -ms-transform:scale(1.2);
             transform: scale(1.2);
             color: @dark-blue;
         }
@@ -127,7 +128,7 @@ input::placeholder{
     }
 
 
-    //weather displaya
+    //weather display
 
 .display-top{
   
@@ -136,7 +137,7 @@ input::placeholder{
 }
 
 .display-bottom{
-    // width:79%;
+  
     display: inline-block;
     @media @wide-screen-down{ width:86%;}
     @media @tablet-down{width: 95%;}
@@ -166,7 +167,7 @@ input::placeholder{
     display: inline-block;
     width: 77%;
     background: rgba(255,255,255,0.8);
-    // background: white;
+
     border-radius: 20px;
     @media @wide-screen-down{ width:90%;}
     @media @desktop-down{  width: 100%;}
@@ -227,18 +228,26 @@ input::placeholder{
 
 @-webkit-keyframes spin {
     from {
+        -webkit-transform:rotate(360deg);
+        -ms-transform:rotate(360deg);
         transform:rotate(0deg);
     }
     to {
+        -webkit-transform:rotate(360deg);
+        -ms-transform:rotate(360deg);
         transform:rotate(360deg);
     }
 }
 
 @keyframes spin {
     from {
+        -webkit-transform:rotate(360deg);
+        -ms-transform:rotate(360deg);
         transform:rotate(0deg);
     }
     to {
+        -webkit-transform:rotate(360deg);
+        -ms-transform:rotate(360deg);
         transform:rotate(360deg);
     }
 }
@@ -253,8 +262,8 @@ input::placeholder{
     @media @small-phone-down { width: 60px; animation:spin 5s linear infinite;}
 
     &:hover{
-        -ms-transform: rotate(360deg); /* IE 9 */
-        -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+        -ms-transform: rotate(360deg); 
+        -webkit-transform: rotate(360deg); 
         transform: rotate(360deg);
     }
 
@@ -275,19 +284,16 @@ input::placeholder{
 //second cards
 
 
-
 @-webkit-keyframes moving {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-7px); }
+    0% { transform: translateY(0); -webkit-transform: translateY(0); -ms-transform: translateY(0);}
+    100% { transform: translateY(-7px); -webkit-transform: translateY(0); -ms-transform: translateY(0); }
 }
 @keyframes moving {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-7px); }
+    0% { transform: translateY(0); -webkit-transform: translateY(0); -ms-transform: translateY(0);}
+    100% { transform: translateY(-7px); -webkit-transform: translateY(0); -ms-transform: translateY(0); }
 }
 
 .secondary-card{
-    // height: 200px;
- 
     width: 230px;
     background: rgba(255,255,255,0.9);
     border-radius: 20px;
@@ -326,8 +332,7 @@ input::placeholder{
 }
 
 .weather-sunny{
-    color: #FFC106;
-    // font-weight: bold;
+    color: @sunny;
 }
 
 .weather-icon{
@@ -336,27 +341,21 @@ input::placeholder{
 }
 
 .sunny{
-    color: #FFC106;
+    color: @sunny;
 }
 
 .rain{
-    color: #6f6f6f;
+    color: @rain;
  
 }
 
 .cloudy{
-    color: #00a5d7;
+    color: @cloudy;
 }
 
 
 .card-weather{
     margin-top: 10px;
-
-    // &:hover{
-    //     -webkit-animation: action 1s infinite  alternate;
-    //     animation: action 1s infinite  alternate;
-    // }
-
 }
 
 .celcius{
@@ -368,14 +367,14 @@ input::placeholder{
 
 //next
 .fa-chevron-circle-right{
-    color: rgba(255,255,255,0.9);
+    color: @almost-white;
     font-size: 30px;
     cursor: pointer;
     transition: all .1s ease-in-out;
     margin: 10px;
 
     &:hover{
-        color:  rgba(255,255,255,0.4);
+        color:  @transparent-color;
     }
     @media @wide-screen-down{  display: none;}; //ipad pro
     @media @tablet-down{  display: none;}; //ipad
@@ -385,14 +384,14 @@ input::placeholder{
 
 .fa-chevron-circle-down{
    display: none;
-    color: rgba(255,255,255,0.9);
+    color: @almost-white;
     font-size: 30px;
     cursor: pointer;
     transition: all .1s ease-in-out;
     margin: 10px;
 
     &:hover{
-        color:  rgba(255,255,255,0.4);
+        color:  @transparent-color;
     }
 
     @media @wide-screen-down{  display: inline-block;}; //ipad pro

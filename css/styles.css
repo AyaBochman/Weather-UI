@@ -4434,22 +4434,23 @@ body {
   margin: 0;
   text-align: center;
   animation: slide 20s linear infinite;
+  -moz-animation: slide 20s linear infinite;
   -webkit-animation: slide 20s linear infinite;
 }
 @keyframes slide {
-  from {
+  0% {
     background-position: 0 0;
   }
-  to {
-    background-position: -400px 0;
+  100% {
+    background-position: -800px 0;
   }
 }
 @-webkit-keyframes slide {
-  from {
+  0% {
     background-position: 0 0;
   }
-  to {
-    background-position: -400px 0;
+  100% {
+    background-position: -800px 0;
   }
 }
 .nav {
@@ -4560,6 +4561,8 @@ input::placeholder {
   transition: all 0.2s ease-in-out;
 }
 .fa-search-location:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
   transform: scale(1.2);
   color: #001D54;
 }
@@ -4758,17 +4761,25 @@ input::placeholder {
 }
 @-webkit-keyframes spin {
   from {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
     transform: rotate(0deg);
   }
   to {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
 @keyframes spin {
   from {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
     transform: rotate(0deg);
   }
   to {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -4803,9 +4814,7 @@ input::placeholder {
 }
 .main-weather:hover {
   -ms-transform: rotate(360deg);
-  /* IE 9 */
   -webkit-transform: rotate(360deg);
-  /* Chrome, Safari, Opera */
   transform: rotate(360deg);
 }
 .weather-cond {
@@ -4831,17 +4840,25 @@ input::placeholder {
 @-webkit-keyframes moving {
   0% {
     transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
   }
   100% {
     transform: translateY(-7px);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
   }
 }
 @keyframes moving {
   0% {
     transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
   }
   100% {
     transform: translateY(-7px);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
   }
 }
 .secondary-card {
@@ -4916,7 +4933,7 @@ input::placeholder {
   margin: 10px;
 }
 .fa-chevron-circle-right:hover {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.3);
 }
 @media (max-width: 1199px) {
   .fa-chevron-circle-right {
@@ -4947,7 +4964,7 @@ input::placeholder {
   margin: 10px;
 }
 .fa-chevron-circle-down:hover {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.3);
 }
 @media (max-width: 1199px) {
   .fa-chevron-circle-down {
