@@ -136,10 +136,27 @@ input::placeholder{
 }
 
 .display-bottom{
- 
+    // width:79%;
     display: inline-block;
+    @media @wide-screen-down{ width:86%;}
+    @media @tablet-down{width: 95%;}
     @media @phone-down { margin-top: -10px;}
     @media @small-phone-down { margin-top: -10px;}
+}
+
+.default-display{
+    @media @wide-screen-down{display:none;}
+    @media @tablet-down{display: none;}
+    @media @phone-down { display: inline-block;}
+    @media @small-phone-down { display: inline-block;}
+}
+
+.tablet-display{
+    display: none;
+    @media @wide-screen-down{display:inline-block;}
+    @media @tablet-down{display: inline-block;}
+    @media @phone-down { display: none;}
+    @media @small-phone-down { display: none;}
 }
 
 
@@ -147,11 +164,13 @@ input::placeholder{
 .main-card{
     height: 180px;
     display: inline-block;
-    width: 80%;
+    width: 77%;
     background: rgba(255,255,255,0.8);
     // background: white;
     border-radius: 20px;
+    @media @wide-screen-down{ width:90%;}
     @media @desktop-down{  width: 100%;}
+    @media @tablet-down {width: 100%}
     @media @phone-down { width: 100%; }
     @media @small-phone-down {width: 100%;}
  
@@ -206,13 +225,32 @@ input::placeholder{
    
 }
 
+@-webkit-keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
 .main-weather{
     width: 100px;
     height: auto;
     transition: all 1s ease-in-out;
-
-    @media @phone-down {  width: 75px; }
-    @media @small-phone-down { width: 60px;}
+    @media @wide-screen-down{  width:86px;animation:spin 5s linear infinite}
+    @media @tablet-down { width: 86px;animation:spin 5s linear infinite}
+    @media @phone-down {  width: 75px;animation:spin 5s linear infinite; }
+    @media @small-phone-down { width: 60px; animation:spin 5s linear infinite;}
 
     &:hover{
         -ms-transform: rotate(360deg); /* IE 9 */
@@ -229,11 +267,24 @@ input::placeholder{
 
 .main-condition{
     margin-top: 28px;
+   
     @media @phone-down { position: absolute; top:-75px; right: 46px; }
     @media @small-phone-down { position: absolute; top:-75px; right: 40px;}
 }
 
 //second cards
+
+
+
+@-webkit-keyframes moving {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-7px); }
+}
+@keyframes moving {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-7px); }
+}
+
 .secondary-card{
     // height: 200px;
  
@@ -253,16 +304,25 @@ input::placeholder{
     &:hover{
         transform: scale(1.05);
         background: #ffffff;
+     .card-weather{
+        -webkit-animation: moving .7s infinite  alternate;
+        animation: moving .7s infinite  alternate;
+     }
+  
     }
-
+    @media @tablet-down {  width: 200px;}
     @media @phone-down { margin-top: 10px; }
     @media @small-phone-down {margin-top:10px; }
 }
+
+
+
 
 .card-header{
     color: @dark-blue;
     font-size: 20px;
     width: 100%;
+  
 }
 
 .weather-sunny{
@@ -281,6 +341,7 @@ input::placeholder{
 
 .rain{
     color: #6f6f6f;
+ 
 }
 
 .cloudy{
@@ -290,6 +351,12 @@ input::placeholder{
 
 .card-weather{
     margin-top: 10px;
+
+    // &:hover{
+    //     -webkit-animation: action 1s infinite  alternate;
+    //     animation: action 1s infinite  alternate;
+    // }
+
 }
 
 .celcius{
@@ -310,6 +377,29 @@ input::placeholder{
     &:hover{
         color:  rgba(255,255,255,0.4);
     }
+    @media @wide-screen-down{  display: none;}; //ipad pro
+    @media @tablet-down{  display: none;}; //ipad
+    @media @phone-down {display: none;};
+    @media @small-phone-down{display: none;};
 }
 
+.fa-chevron-circle-down{
+   display: none;
+    color: rgba(255,255,255,0.9);
+    font-size: 30px;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+    margin: 10px;
+
+    &:hover{
+        color:  rgba(255,255,255,0.4);
+    }
+
+    @media @wide-screen-down{  display: inline-block;}; //ipad pro
+    @media @desktop-down{  display: none;}; 
+    @media @tablet-down{  display: inline-block;}; //ipad
+    @media @phone-down { display: inline-block;};
+    @media @small-phone-down{ display: inline-block;};
+
+}
 
