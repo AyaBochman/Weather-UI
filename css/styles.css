@@ -4840,25 +4840,17 @@ input::placeholder {
 @-webkit-keyframes moving {
   0% {
     transform: translateY(0);
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
   }
   100% {
     transform: translateY(-7px);
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
   }
 }
 @keyframes moving {
   0% {
     transform: translateY(0);
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
   }
   100% {
     transform: translateY(-7px);
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
   }
 }
 .secondary-card {

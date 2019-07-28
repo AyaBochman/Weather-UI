@@ -13,7 +13,7 @@ body{
 }
 
 .main{
-    text-align: @header-align;
+    text-align: @align;
 }
 
 .clouds-animated {
@@ -44,7 +44,7 @@ body{
     height: 190px;
     display: inline-block;
     width: 100%;
-    text-align: @header-align;
+    text-align: @align;
 
     @media @phone-down {  height:180px; }
     @media @small-phone-down {  height:180px;}
@@ -285,12 +285,12 @@ input::placeholder{
 
 
 @-webkit-keyframes moving {
-    0% { transform: translateY(0); -webkit-transform: translateY(0); -ms-transform: translateY(0);}
-    100% { transform: translateY(-7px); -webkit-transform: translateY(0); -ms-transform: translateY(0); }
+    0% { transform: translateY(0);}
+    100% { transform: translateY(-7px); }
 }
 @keyframes moving {
-    0% { transform: translateY(0); -webkit-transform: translateY(0); -ms-transform: translateY(0);}
-    100% { transform: translateY(-7px); -webkit-transform: translateY(0); -ms-transform: translateY(0); }
+    0% { transform: translateY(0);}
+    100% { transform: translateY(-7px); }
 }
 
 .secondary-card{
@@ -311,8 +311,8 @@ input::placeholder{
         transform: scale(1.05);
         background: #ffffff;
      .card-weather{
-        -webkit-animation: moving .7s infinite  alternate;
-        animation: moving .7s infinite  alternate;
+        -webkit-animation: moving .7s infinite alternate;
+        animation: moving .7s infinite alternate;
      }
   
     }
